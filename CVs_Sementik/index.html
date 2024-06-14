@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Experience in CVs</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="body">
+		<div class="import_files">
+			<label for="file-input">Click to import CVs files</label>
+			<input type="file" id="file-input" style="display: none;" multiple accept=".pdf">
+		</div>
+		<div class="viewer" style="display: none;">
+			<div id="nav-buttons">
+				<button id="previous-button">Précédent</button>
+				<div><span id="cur_file">File</span><button id="playpause-button">Pause</button><span id="cur_time">0 seconds</span></div>
+				<button id="next-button">Suivant</button>
+			</div>
+			<div id="pdf-container">
+				<object id="pdf-viewer" data="" type="application/pdf"></object>
+			</div>
+		</div>
+		<div class="contents" style="display: none;">
+			<div class="menu_select">
+				<div class="dropdown">
+					<button class="menus">Menu</button>
+					<div class="dropdown-content">
+						<ul>
+							<li><button onclick="download_CV_Sementik()">Download</button></li>
+							<li><button onclick="reset_all()">reset All</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<form class="exp_value">
+				<div class="calculation_job"><ul>
+					<h2>Calculation job</h2>
+					<li><div>head of data<br>
+						<label>Start: <input type="month" id="hod_s" value=""><!-- <input type="date" id="hod_s">--></label>
+						<label>End: <input type="month" id="hod_e" value=""></label>
+						<label>Length (in Month): <input type="decimal" id="head_of_data" onchange="//changevaluethat(this)"></label>
+					</div></li>
+					<li><div>business developer<br>
+						<label>Start: <input type="month" id="bus_dev_s" value=""></label>
+						<label>End: <input type="month" id="bus_dev_e" value=""></label>
+						<label>Length (in Month): <input type="decimal" id="business_developer" onchange="//changevaluethat(this)"></label>
+					</div></li>
+					
+
+				</ul></div>
+				<div class="calculation_experience"><ul>
+					<h2>Calculation experience</h2>
+					<li><div>team management<br>
+						<label>Start: <input type="month" id="teamm_s" value=""></label>
+						<label>End: <input type="month" id="teamm_e" value=""></label>
+						<label>Length (in Month): <input type="decimal" id="team_management" onchange="//changevaluethat(this)"></label>
+					</div></li>
+					<li><div>sales<br>
+						<label>Start: <input type="month" id="sales_s" value=""></label>
+						<label>End: <input type="month" id="sales_e" value=""></label>
+						<label>Length (in Month): <input type="decimal" id="sales" onchange="//changevaluethat(this)"></label>
+					</div></li>
+					<li><div>product management<br>
+						<label>Start: <input type="month" id="xman_s" value=""></label>
+						<label>End: <input type="month" id="xman_e" value=""></label>
+						<label>Length (in Month): <input type="decimal" id="product_management" onchange="//changevaluethat(this)"></label>
+					</div></li>
+					<li><div>data<br>
+						<label>Start: <input type="month" id="data_s" value=""></label>
+						<label>End: <input type="month" id="data_e" value=""></label>
+						<label>Length (in Month): <input type="decimal" id="data" onchange="//changevaluethat(this)"></label>
+					</div></li>
+				</ul></div>
+				<div class="job"><ul>
+					<h2>Jobs</h2>
+					<label><input type="checkbox" name="account executive" id="account_executive" onchange="//changevaluethat(this)"> Account executive</label>
+					<label><input type="checkbox" name="full-stack developer" id="full-stack_developer" onchange="//changevaluethat(this)"> Full-stack developer </label>
+					<label><input type="checkbox" name="product manager or equivalent" id="product_manager_or_equivalent" onchange="//changevaluethat(this)"> Product manager or equivalent</label>
+					<label><input type="checkbox" name="customer service" id="customer_service" onchange="//changevaluethat(this)"> Customer service</label>
+				</ul></div>
+				<div class="hard_skill"><ul>
+					<h2>Hard skill</h2>
+					<label><input type="checkbox" name="Skills in Python" id="Skills_in_Python" onchange="//changevaluethat(this)"> Skills in Python</label>
+					<label><input type="checkbox" name="javascript" id="javascript" onchange="//changevaluethat(this)"> Javascript</label>
+					<label><input type="checkbox" name="Experience in sales" id="Experience_in_sales" onchange="//changevaluethat(this)"> Experience in sales</label>
+					<label><input type="checkbox" name="Knowledge of CRM tools" id="Knowledge_of_CRM_tools" onchange="//changevaluethat(this)"> Knowledge of CRM tools</label>
+					<label><input type="checkbox" name="Team management" id="Team_management" onchange="//changevaluethat(this)"> Team management</label>
+					<label><input type="checkbox" name="Fluent in english" id="Fluent_in_english" onchange="//changevaluethat(this)"> Fluent in english</label>
+					<label><input type="checkbox" name="Worked in multicultural or international environment" id="Worked_in_multicultural_or_international_environment" onchange="//changevaluethat(this)"> Worked in multicultural or international environment</label>
+					<label><input type="checkbox" name="Knowledge in agile methods" id="Knowledge_in_agile_methods" onchange="//changevaluethat(this)"> Knowledge in agile methods</label>
+					<label><input type="checkbox" name="Knowledge in data science" id="Knowledge_in_data_science" onchange="//changevaluethat(this)"> Knowledge in data science</label>
+				</ul></div>
+				<div class="sector"><ul>
+					<h2>Sector</h2>
+					<label><input type="checkbox" name="hospitality" id="hospitality" onchange="//changevaluethat(this)"> Hospitality</label>
+					<label><input type="checkbox" name="public sector" id="public_sector" onchange="//changevaluethat(this)"> Public sector</label>
+					<label><input type="checkbox" name="health sector" id="health_sector" onchange="//changevaluethat(this)"> Health sector</label>
+					<label><input type="checkbox" name="tech industry" id="tech_industry" onchange="//changevaluethat(this)"> tech industry</label>
+					<label><input type="checkbox" name="unicorns or scale-ups" id="unicorns_or_scale-ups" onchange="//changevaluethat(this)"> unicorns or scale-ups (a start-up that fundraised at least 10 million dollars or euros)</label>
+				</ul></div>
+				<div class="soft_skill"><ul>
+					<h2>Soft skill</h2>
+					<label><input type="checkbox" name="Leadership" id="Leadership" onchange="//changevaluethat(this)"> Leadership</label>
+					<label><input type="checkbox" name="Interpersonal Communication" id="Interpersonal_Communication" onchange="//changevaluethat(this)"> Interpersonal Communication</label>
+				</ul></div>
+			</form>
+		</div>
+	</div>
+	<script src='script.js'></script>
+</body>
+</html>
